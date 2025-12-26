@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>LCT — China Trade</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: radial-gradient(circle at top, #0d1b2a, #02040a);
+  color: #ffffff;
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px 20px;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 0 40px rgba(0,120,255,0.25);
+}
+.logo {
+  width: 140px;
+  margin-bottom: 30px;
+}
+h1 {
+  font-size: 46px;
+  line-height: 1.2;
+}
+.gold {
+  color: #d4af37;
+  text-shadow: 0 0 14px rgba(212,175,55,.6);
+}
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 32px;
+  border-radius: 40px;
+  background: linear-gradient(135deg,#1e3cff,#d4af37);
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 30px rgba(30,60,255,.6);
+}
+.section {
+  margin-top: 140px;
+}
+.section h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+ul {
+  padding-left: 20px;
+}
+li {
+  margin-bottom: 12px;
+}
+.lang {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+.lang button {
+  background: none;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.fade {
+  animation: fadeUp 1s ease forwards;
+}
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(30px);}
+  to {opacity:1; transform:translateY(0);}
+}
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="lang">
+  <button onclick="setLang('ru')">RU</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+
+<div class="container fade" id="app"></div>
+
+<script>
+const data = {
+ru: `
+<div class="hero">
+  <div>
+    <img class="logo" src="logo.png" alt="LCT logo">
+    <h1>Бизнес с Китаем <span class="gold">без хаоса</span></h1>
+    <p>Продажа товаров, переговоры с фабриками и автоматизация процессов.<br>Работаем напрямую из Гуанчжоу.</p>
+    <a class="btn" href="https://t.me/Dmitrii412">Связаться в Telegram</a>
+  </div>
+  <div>
+    <img src="photo.jpg" alt="Founder photo">
+  </div>
+</div>
+
+<div class="section">
+<h2>О компании</h2>
+<p>Меня зовут Дмитрий. Я сооснователь компании <b>LCT</b>.
+Мы базируемся в Гуанчжоу — центре мировой торговли — и сопровождаем клиентов с 2015 года.</p>
+</div>
+
+<div class="section">
+<h2>Услуги</h2>
+<ul>
+<li>🏭 Переговоры с фабриками и выкуп товаров</li>
+<li>🚛 Доставка: Россия, Казахстан, Беларусь, ОАЭ</li>
+<li>📷 Фото- и видеоотчёт перед отправкой</li>
+<li>⚙️ Оптимизация и автоматизация процессов</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Контакты</h2>
+<p>
+Telegram: <b>@Dmitrii412</b><br>
+WeChat: <b>+86 186 8928 2402</b><br>
+<a href="https://t.me/luxchinatrade">Telegram-канал</a>
+</p>
+</div>
+`,
+
+en: `
+<div class="hero">
+  <div>
+    <img class="logo" src="logo.png" alt="LCT logo">
+    <h1>China Trade <span class="gold">Without Chaos</span></h1>
+    <p>Sourcing, negotiations and automation.<br>Based in Guangzhou.</p>
+    <a class="btn" href="https://t.me/Dmitrii412">Contact via Telegram</a>
+  </div>
+  <div>
+    <img src="photo.jpg" alt="Founder photo">
+  </div>
+</div>
+
+<div class="section">
+<h2>About</h2>
+<p>My name is Dmitrii, co-founder of <b>LCT</b>.
+We operate from Guangzhou and manage the full trade cycle since 2015.</p>
+</div>
+
+<div class="section">
+<h2>Services</h2>
+<ul>
+<li>🏭 Factory sourcing & negotiations</li>
+<li>🚛 Logistics: Russia, Kazakhstan, Belarus, UAE</li>
+<li>📷 Inspection reports</li>
+<li>⚙️ Business automation</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Contacts</h2>
+<p>
+Telegram: <b>@Dmitrii412</b><br>
+WeChat: <b>+86 186 8928 2402</b><br>
+<a href="https://t.me/luxchinatrade">Telegram channel</a>
+</p>
+</div>
+`
+};
+
+function setLang(l) {
+  document.getElementById("app").innerHTML = data[l];
+}
+setLang('ru');
+</script>
+
+</body>
+</html>
